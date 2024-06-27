@@ -32,7 +32,7 @@ export default function RootLayout({
           <nav>
             <ul className=" flex items-center space-x-5">
               <li>
-                <Link href={"/admin"}>Admin</Link>
+                <Link href={"/admin"}>Log In</Link>
               </li>
             </ul>
           </nav>
