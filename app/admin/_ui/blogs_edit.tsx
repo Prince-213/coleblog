@@ -4,7 +4,7 @@ import { create } from "domain";
 import { Calendar, Edit, PlusSquareIcon, Trash2, X } from "lucide-react";
 import React, { useState } from "react";
 import { createBlog } from "../../../lib/actions";
-import { getBase64 } from "@/lib/utils";
+
 import SubmitButton from "./submit-button";
 
 const BlogsEdit = () => {
@@ -13,24 +13,6 @@ const BlogsEdit = () => {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [content, setContent] = useState("");
-
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPoster(reader.result);
-        // Clear any previous error
-        console.log(reader.result);
-      };
-      reader.onerror = () => {
-        console.log("Failed to read file. Please try again.");
-      };
-      reader.readAsDataURL(file);
-    } else {
-      console.log("No file selected.");
-    }
-  };
 
   return (
     <div>
