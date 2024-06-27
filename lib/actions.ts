@@ -1,9 +1,6 @@
 "use server";
+import prisma from "@/lib/server/prisma";
 
-const convert = (value: FormDataEntryValue) => {
-  const result = value.toString;
-  return result;
-};
 
 export const createBlog = async (formData: FormData) => {
   console.log(formData);
