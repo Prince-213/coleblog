@@ -8,7 +8,7 @@ import { createBlog } from "../../../lib/actions";
 import SubmitButton from "./submit-button";
 
 const BlogsEdit = () => {
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   const [poster, setPoster] = useState<any>("");
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
@@ -88,7 +88,6 @@ const BlogsEdit = () => {
                 type="text"
                 placeholder="Enter Title"
                 name="title"
-                onChange={(e) => setTitle(e.target.value)}
                 className=" p-4 w-full border-black border"
               />
             </div>
@@ -108,7 +107,6 @@ const BlogsEdit = () => {
               <textarea
                 placeholder=" Enter blog content"
                 name="content"
-                onChange={(e) => setContent(e.target.value)}
                 className=" border border-black h-[15rem] w-full"
               ></textarea>
             </div>

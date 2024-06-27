@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export const logout = async (formData: FormData) => {
+export const logout = async () => {
   if (cookies().get("admin")) {
     cookies().delete("admin");
     redirect("/login");

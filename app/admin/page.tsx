@@ -28,17 +28,16 @@ export default async function Page() {
   return (
     <div className=" w-full min-h-screen relative">
       <div className=" w-[80%] mx-auto rounded-xl border shadow-xl p-10">
-        <form
-          action={logout}
+        <div
           className="
          w-full justify-between flex items-center"
         >
           <BlogsEdit />
-          <button type="submit" className=" flex items-center space-x-3">
+          <button formAction={logout} className=" flex items-center space-x-3">
             <LogOut />
             <p>Log Out</p>
           </button>
-        </form>
+        </div>
 
         <div className=" w-full grid gap-10  mt-20  lg:grid-cols-3">
           {blogData.map((item, index) => {

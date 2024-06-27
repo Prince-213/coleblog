@@ -1,5 +1,6 @@
 "use server";
 import prisma from "@/lib/server/prisma";
+import { revalidatePath } from "next/cache";
 
 
 export const createBlog = async (formData: FormData) => {
@@ -19,6 +20,8 @@ export const createBlog = async (formData: FormData) => {
       updated_at: new Date(),
     },
   });
+
+  revalidatePath("/admin");
 };
 
 export const deleteBlog = async (id: string) => {
@@ -27,4 +30,6 @@ export const deleteBlog = async (id: string) => {
       id: id,
     },
   });
+
+  revalidatePath("/admin");
 };
