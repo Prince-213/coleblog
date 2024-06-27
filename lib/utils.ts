@@ -5,14 +5,3 @@ export const formatDate = (date: Date) => {
   const year = dateObj.toLocaleString("default", { year: "numeric" });
   return `${month} ${day}, ${year}`;
 };
-
-export async function getBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      resolve(reader.result);
-    };
-    reader.onerror = reject;
-  });
-}

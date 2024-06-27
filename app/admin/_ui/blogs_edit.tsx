@@ -24,11 +24,11 @@ const BlogsEdit = () => {
         <p>Create New Blog</p>
       </button>
       {modal && (
-        <div className=" absolute w-full h-full bg-[#00000086] z-50">
+        <div className=" absolute w-full h-full -left-[3%] -top-[10%] shadow-xl z-50">
           <form
             action={createBlog}
             className=" relative lg:w-[60%] bg-white
-             p-20 rounded-lg mx-auto mt-20 space-y-6"
+             p-20 rounded-lg mx-auto mt-20 space-y-6 border"
           >
             <button
               onClick={() => setModal(false)}

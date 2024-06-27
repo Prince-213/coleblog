@@ -8,7 +8,7 @@ const convert = (value: FormDataEntryValue) => {
 export const createBlog = async (formData: FormData) => {
   console.log(formData);
 
-  const title = formData.get("title")?.toString || "";
+  const title = formData.get("title");
   const content = formData.get("content");
   const cat = formData.get("category");
 

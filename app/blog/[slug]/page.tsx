@@ -3,6 +3,7 @@ import Image from "next/image";
 import pic from "@/lib/assets/christian-bowen-JXX_GonMj5s-unsplash.jpg";
 import { Calendar } from "lucide-react";
 import { formatDate } from "@/lib/utils";
+import prisma from "@/lib/server/prisma";
 
 export const dynamic = "force-dynamic";
 
