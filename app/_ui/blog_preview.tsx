@@ -20,9 +20,17 @@ const BlogPreview = ({
   title: string;
 }) => {
   return (
-    <div className=" w-full grid  lg:grid-cols-2 gap-x-20 mt-10">
+    <div
+      className=" w-full grid  lg:grid-cols-2 lg:gap-x-20 space-y-5 lg:space-y-0
+     mt-10"
+    >
       <div className=" h-[420px] relative">
-        <Image src={pic} fill alt="" className=" object-cover object-center" />
+        <Image
+          src={image}
+          fill
+          alt=""
+          className=" object-cover object-center"
+        />
       </div>
       <div className=" w-full max-h-[420px] flex flex-col justify-center space-y-4 ">
         <h1 className=" capitalize font-bold text-3xl">{title}</h1>

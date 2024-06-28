@@ -20,7 +20,12 @@ const FeaturedBlog = ({
   return (
     <div className=" w-full">
       <div className=" w-full h-[320px] relative rounded-[20px] overflow-hidden">
-        <Image src={pic} fill alt="" className=" object-cover object-center" />
+        <Image
+          src={image}
+          fill
+          alt=""
+          className=" object-cover object-center"
+        />
       </div>
       <div className=" w-full flex-col items-center flex pt-20 space-y-4">
         <h1 className=" uppercase text-lg text-secondary">{category}</h1>

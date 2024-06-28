@@ -6,13 +6,16 @@ import React, { useState } from "react";
 import { createBlog } from "../../../lib/actions";
 
 import SubmitButton from "./submit-button";
+import { useFormState } from "react-dom";
+
+const initialState = {
+  message: "",
+};
 
 const BlogsEdit = () => {
   const [modal, setModal] = useState(false);
-  const [poster, setPoster] = useState<any>("");
-  const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("");
-  const [content, setContent] = useState("");
+
+  const [state, formAction] = useFormState(createBlog, initialState);
 
   return (
     <div>
@@ -24,9 +27,9 @@ const BlogsEdit = () => {
         <p>Create New Blog</p>
       </button>
       {modal && (
-        <div className=" absolute w-full h-full -left-[3%] -top-[10%] shadow-xl z-50">
+        <div className=" absolute w-[80%] lg:w-full h-full left-[10%] -top-[10%] shadow-xl z-50">
           <form
-            action={createBlog}
+            action={formAction}
             className=" relative lg:w-[60%] bg-white
              p-20 rounded-lg mx-auto mt-20 space-y-6 border"
           >
@@ -80,7 +83,17 @@ const BlogsEdit = () => {
               </div>
             )} */}
 
-            <input type="text" className=" hidden" value={poster} name="post" />
+            {/* <input type="text" className=" hidden" value={poster} name="post" /> */}
+
+            <div>
+              <h1>Image Url</h1>
+              <input
+                type="text"
+                placeholder="Enter the url of the unsplash image"
+                name="image"
+                className=" p-4 w-full border-black border"
+              />
+            </div>
 
             <div>
               <h1>Title</h1>
@@ -112,6 +125,18 @@ const BlogsEdit = () => {
             </div>
 
             <SubmitButton />
+            {state?.message ? (
+              <p
+                aria-live="polite"
+                className={` text-center mt-4 ${
+                  state?.message.toLowerCase() == "blog added successfully"
+                    ? "text-green-500"
+                    : "text-red-500"
+                } `}
+              >
+                {state?.message}
+              </p>
+            ) : null}
           </form>
         </div>
       )}

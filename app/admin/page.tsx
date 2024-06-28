@@ -15,12 +15,20 @@ import BlogsEdit from "./_ui/blogs_edit";
 import { deleteBlog } from "@/lib/actions";
 import DeleteButton from "./_ui/delete_button";
 import { logout } from "./action/logout";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
 const fetchBlogs = async () => {
   const data = prisma.blog.findMany();
   return data;
+};
+
+const logOut = () => {
+  cookies().delete("admin");
+  redirect("/");
 };
 
 export default async function Page() {
@@ -33,17 +41,28 @@ export default async function Page() {
          w-full justify-between flex items-center"
         >
           <BlogsEdit />
-          <button formAction={logout} className=" flex items-center space-x-3">
+          <Link
+            href={"/logout"}
+            type="submit"
+            className=" flex items-center space-x-3"
+          >
             <LogOut />
             <p>Log Out</p>
-          </button>
+          </Link>
         </div>
 
         <div className=" w-full grid gap-10  mt-20  lg:grid-cols-3">
           {blogData.map((item, index) => {
             return (
               <div key={index} className=" w-full border border-black">
-                <div className=" w-full h-[15rem] bg-emerald-600"></div>
+                <div className=" w-full h-[15rem] relative ">
+                  <Image
+                    src={item.image}
+                    fill
+                    alt=""
+                    className=" object-cover object-center"
+                  />
+                </div>
                 <div className=" w-[90%] mx-auto my-6 flex items-center space-x-5">
                   <h1 className=" uppercase text-base text-secondary">
                     {item.category}

@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <main className=" w-full pb-20  ">
-      <div className=" lg:w-[70%] mx-auto pt-5">
+      <div className=" w-[90%] lg:w-[70%] mx-auto pt-5">
         {blogData[0] != null ? (
           <FeaturedBlog
             id={blogData[0].id}

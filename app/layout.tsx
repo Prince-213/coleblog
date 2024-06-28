@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 import "./globals.css";
 import Link from "next/link";
+import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,10 +16,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isLogged = cookies().get("admin");
+
   return (
     <html lang="en">
       <body className=" bg-white-milk w-full">
-        <header className=" lg:w-[80%] lg:mx-auto py-10 flex items-center justify-between">
+        <header className=" w-[90%] lg:w-[80%] mx-auto py-10 flex items-center justify-between">
           <nav>
             <ul className=" flex items-center space-x-5">
               <li>
@@ -32,7 +37,11 @@ export default function RootLayout({
           <nav>
             <ul className=" flex items-center space-x-5">
               <li>
-                <Link href={"/admin"}>Log In</Link>
+                {cookies().get("admin") ? (
+                  <Link href={"/admin"}>Admin Page</Link>
+                ) : (
+                  <Link href={"/login"}>Log In</Link>
+                )}
               </li>
             </ul>
           </nav>
