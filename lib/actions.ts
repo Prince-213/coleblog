@@ -49,8 +49,6 @@ export const createBlog = async (prevData: any, formData: FormData) => {
       };
     }
   }
-
-  revalidatePath("/admin");
 };
 
 export const deleteBlog = async (id: string) => {
