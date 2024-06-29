@@ -1,5 +1,10 @@
 FROM node:18-alpine AS base
 
+ARG CONTENTFUL_SPACE_ID
+ARG CONTENTFUL_ACCESS_TOKEN
+
+ENV NEXT_PUBLIC_CONTENTFUL_SPACE_ID ${CONTENTFUL_SPACE_ID}
+ENV NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN ${CONTENTFUL_ACCESS_TOKEN}
 # Install dependencies only when needed
 FROM base AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
