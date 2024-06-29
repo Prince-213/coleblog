@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  if (request.nextUrl.pathname.startsWith("/logout")) {
+  /* if (request.nextUrl.pathname.startsWith("/logout")) {
     if (request.cookies.get("admin")) {
       const response = NextResponse.next();
 
@@ -19,5 +19,5 @@ export function middleware(request: NextRequest) {
 
       return response;
     }
-  }
+  } */
 }

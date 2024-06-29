@@ -37,7 +37,7 @@ export const createBlog = async (prevData: any, formData: FormData) => {
       },
     });
 
-    /* revalidatePath("/admin"); */
+    revalidatePath("/admin");
 
     return {
       message: "Blog Added successfully",
