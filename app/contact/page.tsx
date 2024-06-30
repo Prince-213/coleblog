@@ -18,7 +18,7 @@ import { useState } from "react";
 import { ChevronDownIcon } from "lucide-react";
 import { Field, Label, Switch } from "@headlessui/react";
 
-function classNames(...classes) {
+function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
 
