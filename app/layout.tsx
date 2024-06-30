@@ -22,10 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className=" relative bg-white-milk w-full">
-        <header className=" top-0  bg-[#ffffff98] lg:px-40 z-50 w-full lg:w-full mx-auto py-10 flex items-center justify-between">
+        <header className=" top-0 font-medium lg:font-normal text-xs lg:text-base text-center   bg-[#ffffff98] lg:px-40 z-50 w-full lg:w-full mx-auto px-[5%]  py-10 flex items-center justify-between">
           <nav>
             <ul className=" flex items-center space-x-5">
-              <li>
+              <li className=" lg:hidden">
                 <Link href={"/"}>Home</Link>
               </li>
               <li>
@@ -37,7 +37,7 @@ export default function RootLayout({
             </ul>
           </nav>
 
-          <div>
+          <div className=" hidden lg:block">
             <h1 className=" text-2xl font-semibold">Coleman Blog</h1>
           </div>
 
