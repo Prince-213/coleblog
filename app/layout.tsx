@@ -5,6 +5,7 @@ export const dynamic = "force-dynamic";
 import "./globals.css";
 import Link from "next/link";
 import { cookies } from "next/headers";
+import Footer from "./_ui/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,12 +21,18 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className=" bg-white-milk w-full">
-        <header className=" w-[90%] lg:w-[80%] mx-auto py-10 flex items-center justify-between">
+      <body className=" relative bg-white-milk w-full">
+        <header className=" top-0  bg-[#ffffff98] lg:px-40 z-50 w-full lg:w-full mx-auto py-10 flex items-center justify-between">
           <nav>
             <ul className=" flex items-center space-x-5">
               <li>
                 <Link href={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link href={"/about"}>About Us</Link>
+              </li>
+              <li>
+                <Link href={"/services"}>Our Services</Link>
               </li>
             </ul>
           </nav>
@@ -37,6 +44,9 @@ export default function RootLayout({
           <nav>
             <ul className=" flex items-center space-x-5">
               <li>
+                <Link href={"/contact"}>Contact Us</Link>
+              </li>
+              <li>
                 {cookies().get("admin") ? (
                   <Link href={"/admin"}>Admin Page</Link>
                 ) : (
@@ -47,12 +57,7 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
-        <footer className=" w-full bg-primary py-10 flex items-center justify-center text-white-milk">
-          <div className=" text-center">
-            <h1>Coleman Blog</h1>
-            <p>2024</p>
-          </div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
