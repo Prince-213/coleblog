@@ -25,9 +25,9 @@ const Page = () => {
             </h3>
             <p className="text-gray-500 dark:text-gray-400">
               Our experienced travel consultants are here to assist you with
-              planning your perfect trip. Whether you're looking for adventure,
-              relaxation, or a cultural immersion, we provide expert advice and
-              create customized itineraries that match your desires.
+              planning your perfect trip. Whether {"you're"} looking for
+              adventure, relaxation, or a cultural immersion, we provide expert
+              advice and create customized itineraries that match your desires.
             </p>
           </div>
           <div>
@@ -82,8 +82,8 @@ const Page = () => {
             <p className="text-gray-500 dark:text-gray-400">
               Enhance your travel experience with a private tour guide. Our
               professional and friendly guides provide personalized tours,
-              sharing in-depth knowledge and stories about Ireland's history,
-              culture, and attractions.
+              sharing in-depth knowledge and stories about {"Ireland's"}{" "}
+              history, culture, and attractions.
             </p>
           </div>
           <div>
