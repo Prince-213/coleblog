@@ -38,7 +38,9 @@ export default function RootLayout({
           </nav>
 
           <div className=" hidden lg:block">
-            <h1 className=" text-2xl font-semibold">Coleman Blog</h1>
+            <Link href={"/"}>
+              <h1 className=" text-2xl font-semibold">Coleman Blog</h1>
+            </Link>
           </div>
 
           <nav>
