@@ -16,16 +16,32 @@ const fetchBlog = async ({ id }: { id: string }) => {
 
   return data;
 };
+const convertToParagraphs = (text: string) => {
+  // Split the text into an array of sentences/segments
+  const segments = text.split(/\.{15,}/);
+
+  // Map each segment to a paragraph element
+  return segments.map((segment, index) => (
+    <p key={index} className="styled-paragraph">
+      {segment.trim()}.
+    </p>
+  ));
+};
 
 const Blog = async ({ params }: { params: { slug: string } }) => {
   const blogDetail = await fetchBlog({ id: params.slug });
 
   return (
     <div className=" w-full pb-20">
-      <div className=" w-full rounded-2xl h-[640px] relative overflow-hidden">
-        <Image src={pic} fill alt="" className=" object-cover object-center" />
+      <div className="  rounded-2xl h-[640px] relative overflow-hidden">
+        <Image
+          src={blogDetail?.image || ""}
+          fill
+          alt=""
+          className=" object-cover object-center"
+        />
       </div>
-      <div className=" py-20 flex flex-col items-center space-y-8">
+      <div className=" w-[80%] mx-auto  py-20 flex flex-col items-center space-y-8">
         <h1 className=" capitalize font-medium text-5xl text-black-zinc">
           {blogDetail?.title}
         </h1>
@@ -53,8 +69,8 @@ const Blog = async ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
 
-      <div className=" lg:w-[50%] mx-auto">
-        <p className=" leading-loose">{blogDetail?.content}</p>
+      <div className=" w-[80%] lg:w-[50%] mx-auto space-y-8">
+        {convertToParagraphs(blogDetail?.content || "")}
       </div>
     </div>
   );

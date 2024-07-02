@@ -4,8 +4,8 @@ export default function Page() {
   return (
     <div className=" w-full h-screen">
       <section className=" dark:bg-gray-900">
-        <div className="gap-16 items-center py-8 px-4 mx-auto w-[80%] lg:flex lg:flex-row lg:justify-between l lg:py-16 lg:px-6">
-          <div className="font-light w-[40%] text-gray-500 sm:text-lg dark:text-gray-400">
+        <div className="lg:gap-16 items-center py-8 w-full px-4 mx-auto lg:w-[80%] flex flex-col lg:flex lg:flex-row lg:justify-between l lg:py-16 lg:px-6">
+          <div className="font-light lg:w-[40%] text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               Welcome to Coleman Blog
             </h2>
@@ -26,7 +26,7 @@ export default function Page() {
               of your journey.
             </p>
           </div>
-          <div className="grid grid-cols-2 w-[60%] gap-4 mt-8">
+          <div className="grid grid-cols-2 lg:w-[60%] gap-4 mt-8">
             <Image
               width={200}
               height={200}
