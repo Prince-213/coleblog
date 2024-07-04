@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "plus.unsplash.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "rickandmortyapi.com",
+        port: "",
+      },
     ],
   },
 

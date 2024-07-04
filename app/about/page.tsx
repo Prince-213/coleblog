@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Testimonial from "../_ui/testimonial";
 
 export default function Page() {
   return (
-    <div className=" w-full h-screen">
+    <div className=" w-full min-h-screen pb-20">
       <section className=" dark:bg-gray-900">
         <div className="lg:gap-16 items-center py-8 w-full px-4 mx-auto lg:w-[80%] flex flex-col lg:flex lg:flex-row lg:justify-between l lg:py-16 lg:px-6">
           <div className="font-light lg:w-[40%] text-gray-500 sm:text-lg dark:text-gray-400">
@@ -43,6 +44,8 @@ export default function Page() {
             />
           </div>
         </div>
+
+        <Testimonial />
       </section>
     </div>
   );
